@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== コア ===== */
+.main_bg {
+  @apply
+  flex min-h-screen flex-col
+  items-center justify-center
+  bg-black;
+}
+.box_tl { @apply absolute top-2 left-2; }
+.box_tr { @apply absolute top-2 right-2; }
+.box_bl { @apply absolute bottom-2 left-2; }
+.box_br { @apply absolute bottom-2 right-2; }
+
+/* ===== z-index コントロール ===== */
+div#canvasThree { @apply z-0; }
+.box_tl { @apply z-10; }
+.box_tr { @apply z-10; }
+.box_bl { @apply z-10; }
+.box_br { @apply z-10; }
+
+/* ===== 部品 ===== */
+/* ！！ 他のスタイルに組み込むので、余分なスタイルは入れない ！！ */
+.font_base { /* フォント */ @apply font-extrabold tracking-tight; }
+.box { /* ボックス */ @apply px-4 py-2 rounded-full; }
+.box_b { /* ボックス（ボーダー付き） */ @apply box border; }
+.btn { /* ボタン */
+  @apply
+  rounded-full border
+  bg-green-100 border-green-500 text-green-700
+  sm:text-[4rem] text-[2.25rem]
+  disabled:cursor-default disabled:opacity-50;
+}
+.btn > svg { @apply block;} /* var(--fa-display, inline-block) を打ち消す為のスタイル */
+.span_emphasis { /* spanタグの強調表示 */ @apply text-green-700; }
+
+/* ===== ローディング関連 ===== */
+.nl_base { /* ベース */ @apply box_tr box_b sm:text-[1rem] text-[0.5rem] font-bold; }
+.nl_loading { /* 読込中 */ @apply nl_base bg-yellow-100 border-yellow-500 text-yellow-700; }
+.nl_finish { /* 読込完了 */ @apply nl_base bg-blue-100 border-blue-500 text-blue-700; }
+
+/* ===== プレイヤー関連 ===== */
+#media { /* Text Alive プレイヤー */ @apply box_br; }
+.mp_ctrl_area { /* 音楽プレイヤー */ @apply box_bl;}
+.mp_ctrl_btn_disp { /* ボタンの間隔 */
+  @apply
+  btn
+  sm:mr-4 sm:mb-0 sm:last:mr-0 /* PC */
+  mb-4 last:mb-0; /* スマホ */
+}
+.mp_ctrl_btn { /* 音楽プレイヤー：ボタン */ @apply sm:flex grid;}
+.mp_select_area { /* 選曲情報 */ @apply box_tl w-auto justify-start; }
+.mp_select_music { /* 選曲情報：ロードエリア */
+  @apply
+  box_b font_base
+  bg-orange-100 border-orange-500 text-orange-700 
+  sm:text-[1.5rem] text-[1rem];
+}
+
+/* ===== 演出関連 ===== */
+.cct { /* 歌詞 */ @apply box font_base text-white sm:text-[5rem] text-[3rem]; }
+.mp_selected > div { @apply animate-show-lyrics; }
+.char_hide { @apply animate-hide-lyrics; }
+.char_noun { @apply text-green-200 sm:text-[6rem] text-[4rem]; }
+.char_en_first { @apply ml-5; }
+.char_en_last { @apply mr-5; }
+
+/* ===== Three.js関連 ===== */
+/* モニター */
+.monitorBasic.c-kEkIHu.top-left { @apply absolute top-[4.5rem] left-2;}

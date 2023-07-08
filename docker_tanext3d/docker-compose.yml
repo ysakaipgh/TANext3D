@@ -1,0 +1,25 @@
+version: "3.8"
+
+networks:
+  fixed_compose_network:
+    driver: bridge
+    ipam:
+      driver: default
+      options: {}
+      config:
+        - subnet: 192.168.39.0/24
+
+services:
+  tanext3d:
+    image: nginx
+    labels:
+      net.personal-dashboard.tanext3d.description: "ベースパッケージ"
+    container_name: tanext3d
+    volumes:
+      - ${TANEXT3D_BUILD_PATH}:/usr/share/nginx/html
+    networks:
+      fixed_compose_network:
+        ipv4_address: 192.168.39.39
+    ports:
+      - 8039:80
+    env_file: .env
