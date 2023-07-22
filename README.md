@@ -5,8 +5,11 @@
   - Text Alive の `onTimeUpdate(...)` は、 Redux 経由で、 Three.js の `<Canvas />` 内に表示するコンポーネント群、 `<Basic />` に繋げてあります。
     - `ContentsAreaController.getBeatRacio(...)` で、Text Alive の `findBeat(...)` を取得済みですので、 `position` だけあれば良い！、と言う人は演出に専念してみてください。
     - `onTimeUpdate(...)` 以外からも値を取得したい！、と言う方は、 `<ThreeJsArea />` 内の `setPositionOnUpdate(...)` を参考に、 `Player.addListener` バインド用の関数と Redux の各種ステートなどを追加してください。
-  - ここ、こういう実装の方がスマートだよ！間違っているよ！、等ありましたら、ぜひご指摘いただければと思います。
+  - このテンプレートは、あくまでも「 Text Alive <> Next.js (React) <> Three.js 」を接続しただけの物なので、これ以上改修を加える予定はありません。
+    - 実際に、自分でもこうした方がより良い、と思う部分はありますが…
 - Text Alive 用に作ってはいますが、外部APIを他の物に変更すれば、流用は効くかと思います。
+
+- [デモページ](https://www.personal-dashboard.net/contents/tanext3d/)
 
 ## 採用フレームワーク
 
