@@ -10,6 +10,12 @@
 - Text Alive 用に作ってはいますが、外部APIを他の物に変更すれば、流用は効くかと思います。
 
 - [デモページ](https://www.personal-dashboard.net/contents/tanext3d/)
+- [このパッケージを使ったサンプルページ](https://www.personal-dashboard.net/contents/textalivenext/)
+  - 来年度の応募用に作っている最中ですが、このパッケージが基準となっています。
+    - こんなこと出来るよ、という参考にしていただければと思います。
+    - このまま応募する気はないので、一例として。
+  - 追加したパッケージ
+    - `@emotion/react`, `@gltf-transform/core`, `@pixiv/three-vrm`, `3d-tiles-renderer`, `@babel/core`, など。
 
 ## 採用フレームワーク
 
